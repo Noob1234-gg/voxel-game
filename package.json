@@ -1,0 +1,1 @@
+{"name": "voxel-game", "version": "1.0.0", "description": "A voxel game built with Three.js", "main": "index.js", "scripts": { "build": "webpack --mode production", "start": "webpack serve --mode development" }, "dependencies": { "three": "^0.126.1" }, "devDependencies": { "webpack": "^5.64.4", "webpack-cli": "^4.9.1", "webpack-dev-server": "^3.11.3" }}
