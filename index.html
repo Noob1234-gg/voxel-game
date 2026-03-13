@@ -4,9 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voxel Game</title>
+    <!-- Include Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+        #container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+        #overlay {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Voxel Game!</h1>
-    <script src="/path/to/your/game.js"></script>
+    <div id="container">
+        <canvas id="gameCanvas"></canvas>
+        <div id="overlay">
+            <h3>Controls</h3>
+            <p>Move: W/A/S/D</p>
+            <p>Jump: Spacebar</p>
+        </div>
+    </div>
+    <script>
+        // Initialize Three.js and game logic here
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('gameCanvas') });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.z = 5;
+
+        function animate() {
+            requestAnimationFrame(animate);
+            // Game logic and rendering code here
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
 </body>
 </html>
